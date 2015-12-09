@@ -309,6 +309,7 @@ public abstract class Device
 					onDeviceDetails(data.getSerialNumber(), data.getModel(), data.getFirmwareVersion());
 					break;
 				}
+				//Outdated packet
 //				case PFMAT.RX_CALIBRATED_SENSOR:
 //				{
 //					PacketRx_CalibratedSensor data = (PacketRx_CalibratedSensor)packet;

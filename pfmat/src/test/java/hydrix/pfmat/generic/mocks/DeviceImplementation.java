@@ -1,16 +1,18 @@
-package hydrix.pfmat.generic;
+package hydrix.pfmat.generic.mocks;
 
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import hydrix.pfmat.generic.Device;
+
 /**
  * Created by mauriziopietrantuono on 09/12/15.
  */
-public class DeviceImpl extends Device {
+public class DeviceImplementation extends Device {
     private final InputStream inputStream;
     private final OutputStream outputStream;
 
-    public DeviceImpl(InputStream inputStream, OutputStream outputStream) {
+    public DeviceImplementation(InputStream inputStream, OutputStream outputStream) {
         this.inputStream = inputStream;
         this.outputStream = outputStream;
     }

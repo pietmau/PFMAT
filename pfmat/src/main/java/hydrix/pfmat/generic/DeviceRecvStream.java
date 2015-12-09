@@ -43,6 +43,7 @@ public class DeviceRecvStream extends RecvStream
 			case PFMAT.RX_BATTERY_STATUS:
 				packet = new PacketRx_BatteryStatus();
 				break;
+			//Outdated packet
 //			case PFMAT.RX_CALIBRATED_SENSOR:
 //				packet = new PacketRx_CalibratedSensor();
 //				break;

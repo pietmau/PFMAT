@@ -10,7 +10,7 @@ import java.io.OutputStream;
 import hydrix.pfmat.generic.mocks.DeviceImplementation;
 
 /**
- * Created by mauriziopietrantuono on 09/12/15.
+ * Created by mauriziopietrantuono
  */
 public class ConnectTests extends TestCase {
 

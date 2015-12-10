@@ -1,4 +1,4 @@
-package hydrix.pfmat.generic;
+package hydrix.pfmat.generic.sendtests;
 
 import junit.framework.TestCase;
 
@@ -13,7 +13,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 /**
- * Created by mauriziopietrantuono on 09/12/15.
+ * Created by mauriziopietrantuono .
  */
 public class SendTests extends TestCase {
 
@@ -28,7 +28,8 @@ public class SendTests extends TestCase {
         OutputStream outputStream= mock(OutputStream.class);
         DeviceImplementation device= new DeviceImplementation(inputStream,outputStream);
         device.connect();
-        verify(outputStream, times(0)).write(any(byte[].class));
+        Thread.sleep(200);//Lag for rec thread to start
+        verify(outputStream, times(1)).write(any(byte[].class));//1 time, only connection (default requests device details)
     }
 
     public void testGetBatteryStatus() throws Exception {
@@ -36,8 +37,9 @@ public class SendTests extends TestCase {
         OutputStream outputStream= mock(OutputStream.class);
         DeviceImplementation device= new DeviceImplementation(inputStream,outputStream);
         device.connect();
+        Thread.sleep(200);
         device.sendGetBatteryStatus();
-        verify(outputStream, times(1)).write(any(byte[].class));
+        verify(outputStream, times(2)).write(any(byte[].class));//2 times: device details + batt status
     }
 
     public void testSendGetSensorData() throws Exception {
@@ -45,6 +47,7 @@ public class SendTests extends TestCase {
         OutputStream outputStream= mock(OutputStream.class);
         DeviceImplementation device= new DeviceImplementation(inputStream,outputStream);
         device.connect();
+        Thread.sleep(200);
         device.sendGetSensorData(0);
         verify(outputStream, times(2)).write(any(byte[].class));//Sending timestamp as well
     }
@@ -53,7 +56,8 @@ public class SendTests extends TestCase {
         OutputStream outputStream= mock(OutputStream.class);
         DeviceImplementation device= new DeviceImplementation(inputStream,outputStream);
         device.connect();
+        Thread.sleep(200);
         device.sendGetDeviceDetails();
-        verify(outputStream, times(1)).write(any(byte[].class));
+        verify(outputStream, times(2)).write(any(byte[].class));
     }
 }

@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import hydrix.pfmat.generic.Device;
 
 /**
- * Created by mauriziopietrantuono on 09/12/15.
+ * Created by mauriziopietrantuono
  */
 public class DeviceImplementation extends Device {
     private final InputStream inputStream;

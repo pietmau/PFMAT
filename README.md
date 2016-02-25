@@ -1,6 +1,8 @@
 # PFMAT
 PFMAT lib
 
+Library used to poll sensor data of a specific Bluetooth device. 
+
 Usage:
 
 repositories {
